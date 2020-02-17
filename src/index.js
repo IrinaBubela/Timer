@@ -1,10 +1,9 @@
 const timerDisplay = document.querySelector(".display__time-left");
 const endTime = document.querySelector(".display__end-time");
 const buttons = document.querySelectorAll("[data-time]");
-//
+
 // Implement method to display how much time is left in "timeDisplay" element
-// extra points for changing page title
-//
+
 function displayTimeLeft(timeLeft) {
   var minutes = Math.floor((timeLeft % 3600) / 60);
   var seconds = Math.floor(timeLeft % 60);
@@ -12,20 +11,14 @@ function displayTimeLeft(timeLeft) {
   seconds = seconds < 10 ? "0" + seconds : seconds;
   timerDisplay.innerHTML = minutes + ":" + seconds;
 }
-//
+
 // Implement method to display end time in "endTime" element
-//
+
 function displayEndTime(timestamp) {
   endTime.innerHTML = "Stop counting at " + timestamp;
-  // ------------============ Start Here ============------------
-  // ------------============ End Here ==============------------
 }
-//
-// Create timer and start counting down from current time
-// use "setInterval" to run function every second
-// clear interval after time is up
-// remember to update clock every second
-//
+
+
 
 var x;
 function timer(seconds) {
@@ -43,10 +36,6 @@ function timer(seconds) {
   ]
     .map(time => time.toString().padStart(2, "0"))
     .join(":");
-
-  // console.log(futureTime);
-  // countDownDate.setHours(countDownDate.getHours() + hr);
-  // var timestamp = parseInt(curTime + seconds);
 
   let timeLeft = parseInt(seconds);
   console.log(timeLeft);
@@ -66,11 +55,7 @@ function timer(seconds) {
   displayEndTime(futureTime);
 }
 
-//
-// Get minutes from event
-// call timer with number of seconds from event
-// use dataset property from DOM element
-//
+
 function startTimer(e) {
   let seconds = e.target.dataset.time;
   timer(seconds);
@@ -87,18 +72,3 @@ document.customForm.addEventListener("submit", e => {
   timer(seconds);
 });
 
-//
-// Add "click" Event Listener to every single button
-// use already implemented method "startTimer"
-//
-// ------------============ Start Here ============------------
-
-// ------------============ End Here ==============------------
-
-//
-// Add "submit" Event Listener to the "customForm" element
-// extract value from input field and clear field after setting timer
-//
-// ------------============ Start Here ============------------
-
-// ------------============ End Here ==============------------
